@@ -17,13 +17,27 @@ const Menu = () => {
           <Pressable style={Styles.menuData}>
             <Image source={item.image} style={{ width: 70, height: 70 }} />
             <View>
-              <Text style={{ fontSize: 20 }}>{item.name}</Text>
+              <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+                {item.name}
+              </Text>
+
+              <View
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: 10,
+                }}
+              >
+                <Text style={{ fontSize: 15, fontWeight: "100" }}>
+                  {item.category}
+                </Text>
+              </View>
             </View>
             <View>
               <Text
                 style={{ fontSize: 25, color: "#6B50F6", fontWeight: "900" }}
               >
-                {item.price}$
+                $ {item.price}
               </Text>
             </View>
           </Pressable>
@@ -47,6 +61,6 @@ Styles = StyleSheet.create({
     fontWeight: "700",
     margin: 13,
     justifyContent: "space-around",
-    alignItems:"center",
+    alignItems: "center",
   },
 });

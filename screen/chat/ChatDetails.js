@@ -5,16 +5,16 @@ import { StyleSheet, SafeAreaView, ImageBackground, View, TouchableOpacity, Text
     from "react-native";
 const dataChatContents = [
     {
-        meToThem: "Okay, for what level of spiciness?"
+        meToThem: "Hi, Khỏe Khum"
     },
     {
-        meToThem: "Okay I'm waiting 👍"
+        meToThem: "Dạo này vẫn ổn chứ"
     },
     {
-        theyToMe: "Okay, wait a minute 👍 ",
+        theyToMe: " Không, Thiếu tiền !",
     },
     {
-        meToThem: "Okay I'm waiting 👍"
+        meToThem: " Tui cũng vậy !"
     }
 ];
 export default function ChatDetail({navigation}) {
@@ -31,14 +31,11 @@ export default function ChatDetail({navigation}) {
 
     const handleChatSent = () => {
         if (dataInputChat === '') {
-            // Hiển thị thông báo
             setShowEmptyMessageAlert(true);
-            // Tự động ẩn thông báo sau 3 giây (hoặc khoảng thời gian tùy ý)
             setTimeout(() => {
                 setShowEmptyMessageAlert(false);
-            }, 500); // 3 giây
+            }, 500); 
         } else {
-            // Gửi tin nhắn và xử lý logic gửi tin nhắn ở đây
             const newMessage = { meToThem: dataInputChat };
             const mesUpdate = [...dataChat, newMessage];
             setDataChat(mesUpdate);
@@ -66,7 +63,7 @@ export default function ChatDetail({navigation}) {
                     <TouchableOpacity style={styles.frameProfile}>
                         <Image source={require('../../assets/images/Klein.png')} />
                         <View style={{ width: '70%', alignItems: 'flex-start', justifyContent: 'center' }}>
-                            <Text style={styles.nameText}>Name</Text>
+                            <Text style={styles.nameText}>Lê Xuân</Text>
                             <View style={styles.statusFrame}>
                                 <Image source={require('../../assets/icons/Ellipse184.png')} />
                                 <Text style={styles.statusText}>Online</Text>
@@ -105,7 +102,6 @@ export default function ChatDetail({navigation}) {
                             onChangeText={newText => setDataInputChat(newText)}
                             value={dataInputChat}
                             placeholder="Messages"
-                        // keyboardType="text"
                         />
                         <TouchableOpacity
                             onPress={handleChatSent}
@@ -205,7 +201,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         justifyContent: 'space-around',
-        borderRadius: 22
+        borderRadius: 22,
+        marginTop:-20,
     },
 
     input: {

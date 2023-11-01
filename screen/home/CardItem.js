@@ -28,7 +28,8 @@ const CardItem=()=>{
             marginRight: 16,
             }}
             >
-                <Image source={item.image} style={{width:150,height:150,resizeMode:"center"}}/>
+                <Image source={item.image} style={{ width:150,height:150,resizeMode:"contain" , marginBottom:12, borderRadius:20,}}/>
+                <Text style={{ fontWeight:"bold"}}>{item.name}</Text>
                 <Text>{item.time}</Text>
            </Pressable>}  
            /> 

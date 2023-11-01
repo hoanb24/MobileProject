@@ -2,8 +2,8 @@
 export const ListData = [
     {
         id:"01",
-        name:"Tuna Tartare",
-        image: require("../../assets/images/chicken.png"),
+        name:"King Crab",
+        image: require("../../assets/images/kingcrab.jpg"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
         time:'40 mins',
@@ -12,7 +12,7 @@ export const ListData = [
         color:"#f39c12",
         category:"haisan",
         calories:"420 cal",
-        description:"cook the food so delisiout",
+        description:"So Fresh",
         step:[
             "step one",
             "step two",
@@ -21,8 +21,8 @@ export const ListData = [
     },
     {
         id:"02",
-        name:"gachienchuoi",
-        image: require("../../assets/images/lasgana.png"),
+        name:"Tôm Alaska",
+        image: require("../../assets/images/alaska.png"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
         time:'30 mins',
@@ -31,7 +31,7 @@ export const ListData = [
         category:"haisan",
         price:'$40',
         calories:"420 cal",
-        description:"coo the food so delisiout",
+        description:"So Fresh",
         step:[
             "step one",
             "step two",
@@ -40,7 +40,7 @@ export const ListData = [
     },
     {
         id:"03",
-        name:"thitheocay",
+        name:"Mì xào hải sản",
         image: require("../../assets/images/tuna.png"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
@@ -50,7 +50,7 @@ export const ListData = [
         color:"#E53935",
         category:"haisan",
         calories:"420 cal",
-        description:"cook the food so delisiout",
+        description:"Fresh",
         step:[
             "step one",
             "step two",
@@ -59,8 +59,8 @@ export const ListData = [
     },
     {
         id:"04",
-        name:"chaomaogay",
-        image: require("../../assets/images/carrot.jpg"),
+        name:"Cá Nục Kho Cay",
+        image: require("../../assets/images/canuc.jpg"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
         time:'40 mins',
@@ -69,11 +69,12 @@ export const ListData = [
         category:"thitkho",
         difficulty:"Medium",
         calories:"420 cal",
+        description:"Vị Ngon đậm vị",
     },
     {
         id:"05",
-        name:"gachienchuoi",
-        image: require("../../assets/images/lasgana.png"),
+        name:"Bạch Tuộc Xào Cay",
+        image: require("../../assets/images/bachtuoc.jpg"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
         time:'50 mins',
@@ -82,7 +83,7 @@ export const ListData = [
         color:"#f39c12",
         category:"thitkho",
         calories:"420 cal",
-        description:"cook the food so delisiout",
+        description:"Rất cay",
         step:[
             "step one",
             "step two",
@@ -91,8 +92,8 @@ export const ListData = [
     },
     {
         id:"06",
-        name:"thitheocay",
-        image: require("../../assets/images/tuna.png"),
+        name:"Thịt Nướng",
+        image: require("../../assets/images/thitnuong.jpg"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
         time:'40 mins',
@@ -101,7 +102,7 @@ export const ListData = [
         calories:"420 cal",
         category:"thitkho",
         price:'$60',
-        description:"cook the food so delisiout",
+        description:"Giá rẻ",
         step:[
             "step one",
             "step two",
@@ -185,7 +186,7 @@ export const MenuData = [
     name:"Topu",
     image:require("../../assets/images/tuna.png"),
     category:"Cheap",
-    price:"250",
+    price:"150",
     namerestaurant:"Waroenk kita",
    } ,
    {
@@ -193,7 +194,7 @@ export const MenuData = [
     name:"Fried Spring Rolls",
     image:require("../../assets/images/Menu2.png"),
     category:"Rice",
-    price:"250",
+    price:"120",
     namerestaurant:"Waroenk kita",
    } ,
 ];

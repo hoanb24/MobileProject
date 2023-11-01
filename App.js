@@ -18,6 +18,11 @@ import ViewItem from './screen/home/ViewItem';
 import DetailPage from './screen/home/DetailPage';
 import TestSwipeListView from "./screen/order/OrderDetails";
 import ShoppingCartPage from './screen/home/ShoppingCartPage';
+import ConfirmOrder from './screen/order/ConfirmOrder';
+import Shipping from './screen/order/Shipping';
+import Payment from './screen/order/Payment';
+import Address from './screen/order/Address';
+import Ordered from './screen/order/Ordered';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -85,6 +90,11 @@ export default function App() {
         <Stack.Screen name="call" component={Call} />
         <Stack.Screen name='searchs' component={SearchPage}/>
         <Stack.Screen name='detailpage' component={DetailPage}/>
+        <Stack.Screen name='confirmorder' component={ConfirmOrder}/>
+        <Stack.Screen name='shipping' component={Shipping}/>
+        <Stack.Screen name='payment' component={Payment}/>
+        <Stack.Screen name='address' component={Address}/>
+        <Stack.Screen name='ordered' component={Ordered}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

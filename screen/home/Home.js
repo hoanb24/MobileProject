@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
               style={{ marginTop: 30 }}
               name={"bell-o"}
               size={28}
-              color="red"
+              color="#6b50f6"
             />
           </View>
 
@@ -60,7 +60,6 @@ const Home = ({ navigation }) => {
                 clearButtonMode="always"
               ></TextInput>
             </View>
-            {/* <FontAwesome name={"bars"} size={35} color="blue" style={{ marginTop: 25 }} /> */}
             <Pressable
               onPress={() => {
                 navigation.navigate("searchs");
@@ -68,7 +67,14 @@ const Home = ({ navigation }) => {
             >
               <Image
                 source={require("../../assets/icons/FilterSearch.png")}
-                style={{ width: 55, height: 55, marginVertical: 20 }}
+                style={{
+                  width: 55,
+                  height: 55,
+                  marginVertical: 20,
+                  backgroundColor: "#6B50F6",
+                  opacity: 0.5,
+                  borderRadius: 12,
+                }}
               />
             </Pressable>
           </Pressable>
@@ -108,7 +114,7 @@ const Home = ({ navigation }) => {
                     borderRadius: 8,
                     marginTop: 10,
                     paddingTop: 5,
-                    marginLeft:60,
+                    marginLeft: 60,
                   }}
                 >
                   Buy now
@@ -133,7 +139,6 @@ const Home = ({ navigation }) => {
                 <Text style={{ color: "#6B50F6" }}>View More</Text>
               </Pressable>
             </View>
-
             <CardItem />
           </View>
         </View>
