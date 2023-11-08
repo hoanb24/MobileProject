@@ -18,6 +18,7 @@ import ViewItem from './screen/home/ViewItem';
 import DetailPage from './screen/home/DetailPage';
 import TestSwipeListView from "./screen/order/OrderDetails";
 import ShoppingCartPage from './screen/home/ShoppingCartPage';
+import Profile from './screen/home/Profile';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -36,9 +37,9 @@ export default function App() {
           tabBarIcon: ({ color, size }) => {
             let iconName;
             if (route.name === 'Home') {
-              iconName = 'home';
+              iconName = '';
             } else if (route.name === 'User') {
-              iconName = 'user';
+              iconName = '';
             } else if (route.name === 'Cart') {
               iconName = 'shopping-cart';
             } else if (route.name === 'Chat') {
@@ -55,10 +56,10 @@ export default function App() {
             tabBarIcon: ({ color }) => <FontAwesome name='home' size={30} color={color} />,
           }}
         />
-        <Tab.Screen name="User" component={Menu}
+        <Tab.Screen name="Profile" component={Profile}
           options={{
 
-            tabBarIcon: ({ color }) => <FontAwesome name='user' size={30} color={color} />,
+            tabBarIcon: ({ color }) => <FontAwesome name='Profile' size={30} color={color} />,
           }}
         />
         <Tab.Screen name="Cart" component={TestSwipeListView}
@@ -84,7 +85,8 @@ export default function App() {
         <Stack.Screen name="callRinging" component={CallRinging} />
         <Stack.Screen name="call" component={Call} />
         <Stack.Screen name='searchs' component={SearchPage}/>
-        <Stack.Screen name='detailpage' component={DetailPage}/>
+        <Stack.Screen name='profile' component={Profile}/>
+      
       </Stack.Navigator>
     </NavigationContainer>
   )
