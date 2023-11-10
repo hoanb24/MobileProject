@@ -8,13 +8,19 @@ import {
   Text,
 } from "react-native";
 import { MenuData } from "./ListData";
+import { useNavigation } from "@react-navigation/native";
+
+
+
 const Menu = () => {
+  const navigation =useNavigation();
+  
   return (
     <View style={Styles.menuItem}>
       <FlatList
         data={MenuData}
         renderItem={({ item }) => (
-          <Pressable style={Styles.menuData}>
+          <Pressable style={Styles.menuData} onPress={()=> navigation.navigate("menudetail")}>
             <Image source={item.image} style={{ width: 70, height: 70 }} />
             <View>
               <Text style={{ fontSize: 20, fontWeight: "bold" }}>
@@ -46,6 +52,7 @@ const Menu = () => {
     </View>
   );
 };
+
 export default Menu;
 Styles = StyleSheet.create({
   menuItem: {

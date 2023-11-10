@@ -23,8 +23,12 @@ import Shipping from './screen/order/Shipping';
 import Payment from './screen/order/Payment';
 import Address from './screen/order/Address';
 import Ordered from './screen/order/Ordered';
+import DetailMenu from './screen/home/DetailMenu';
+
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 export default function App() {
   const BottomTab = () => {
     return (
@@ -95,6 +99,9 @@ export default function App() {
         <Stack.Screen name='payment' component={Payment}/>
         <Stack.Screen name='address' component={Address}/>
         <Stack.Screen name='ordered' component={Ordered}/>
+        <Stack.Screen name='menudetail' component={DetailMenu}/>
+
+
       </Stack.Navigator>
     </NavigationContainer>
   )

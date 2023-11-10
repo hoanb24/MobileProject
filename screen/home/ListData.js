@@ -198,3 +198,40 @@ export const MenuData = [
     namerestaurant:"Waroenk kita",
    } ,
 ];
+
+export const reviewData = [
+    {
+      id: "01",
+      author: "Dianne Russell",
+      date: "12 April 2021",
+      image: require("../../assets/images/profile_user.jpg"),
+      comment: "This is great, so delicious! You must be here with your family.",
+      rating: 5,
+    },
+    {
+      id: "02",
+      author: "Topu",
+      date: "12 April 2021",
+      image: require("../../assets/images/profile_user2.jpg"),
+      comment: "This is great, so delicious! You must be here with your family.",
+      rating: 4,
+    },
+    {
+        id: "03",
+        author: "Topu",
+        date: "12 April 2021",
+        image: require("../../assets/images/profile_user2.jpg"),
+        comment: "This is great, so delicious! You must be here with your family.",
+        rating: 4,
+      },
+      {
+        id: "04",
+        author: "Topu",
+        date: "12 April 2021",
+        image: require("../../assets/images/profile_user2.jpg"),
+        comment: "This is great, so delicious! You must be here with your family.",
+        rating: 4,
+      }
+  ];
+  
+  
