@@ -180,6 +180,7 @@ export const MenuData = [
     category:"Crab",
     price:"250",
     namerestaurant:"Waroenk kita",
+    rating:"4,5"
    } ,
    {
     id:"02",
@@ -188,6 +189,7 @@ export const MenuData = [
     category:"Cheap",
     price:"150",
     namerestaurant:"Waroenk kita",
+    rating:"4,0"
    } ,
    {
     id:"03",
@@ -196,6 +198,7 @@ export const MenuData = [
     category:"Rice",
     price:"120",
     namerestaurant:"Waroenk kita",
+    rating:"3,5"
    } ,
 ];
 

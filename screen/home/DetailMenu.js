@@ -17,8 +17,9 @@ import { reviewData } from './ListData';
 
 const { width, height } = Dimensions.get('window');
 
-export default function DetailMenu() {
+export default function DetailMenu({route}) {
   const renderItem = ({ item }) => <TestimonialFrame testimonial={item} />;
+  const { item } = route.params;
   const scrollA = useRef(new Animated.Value(0)).current;
   return (
     <>
@@ -35,7 +36,7 @@ export default function DetailMenu() {
             alignItems: "center",
             height: height - 400,
           }}>
-            <Animated.Image source={require("../../assets/images/Sandwichmnu.png")}
+            <Animated.Image source={item.image}
               resizeMode='cover'
               style={{
                 ...styles.banner(scrollA),
@@ -78,7 +79,7 @@ export default function DetailMenu() {
                 </View>
               </View>
             </View>
-            <Text style={{ fontSize: 27, fontWeight: "800", marginVertical: 20 }}>Rainbow Sandwich {'\n'}Sugarless</Text>
+            <Text style={{ fontSize: 27, fontWeight: "800", marginVertical: 20 }}>{item.name}</Text>
             <View style={{ flexDirection: "row", justifyContent: "flex-start", alignItems: "center" }}>
               <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
                 <EvilIcons name="location" size={30} color="#6B50F6" />
@@ -86,7 +87,7 @@ export default function DetailMenu() {
               </View>
               <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", paddingLeft: 20 }}>
                 <MaterialIcons name="star-half" size={30} color="#3FDA85" />
-                <Text style={{ ...styles.textRank }}>4,8 Rating</Text>
+                <Text style={{ ...styles.textRank }}>{item.rating}</Text>
               </View>
             </View>
             <View style={{ marginVertical: 20 }}>
@@ -101,9 +102,6 @@ export default function DetailMenu() {
                 ]}
                 renderItem={({ item }) => <Text style={{ fontSize: 16 }}>{`\u2022 ${item.key}`}</Text>}
               />
-              <Text style={styles.menuText}>Nulla occaecat velit laborum exercitation ullamco.
-                Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt.
-              </Text>
             </View>
             <Text style={{ fontSize: 18, fontWeight: "800", marginBottom: 10 }}>Testimonials</Text>
               <FlatList
@@ -111,7 +109,7 @@ export default function DetailMenu() {
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
                 nestedScrollEnabled={true}  
-                style={{ maxHeight: 200 }}  
+                style={{ maxHeight: 320 }}  
               />
           </View>
         </Animated.ScrollView>

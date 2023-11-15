@@ -20,7 +20,7 @@ const Menu = () => {
       <FlatList
         data={MenuData}
         renderItem={({ item }) => (
-          <Pressable style={Styles.menuData} onPress={()=> navigation.navigate("menudetail")}>
+          <Pressable style={Styles.menuData} onPress={()=> navigation.navigate("menudetail", {item:item})}>
             <Image source={item.image} style={{ width: 70, height: 70 }} />
             <View>
               <Text style={{ fontSize: 20, fontWeight: "bold" }}>
