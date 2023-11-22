@@ -11,6 +11,8 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import CardItem from "./CardItem";
 import Menu from "./Menu";
+import TestimonialFrame from "../../components/TestimonialFrame";
+
 const Home = ({ navigation }) => {
   return (
     <ScrollView>

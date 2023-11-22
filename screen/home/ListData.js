@@ -180,6 +180,7 @@ export const MenuData = [
     category:"Crab",
     price:"250",
     namerestaurant:"Waroenk kita",
+    rating:"4,5"
    } ,
    {
     id:"02",
@@ -188,6 +189,7 @@ export const MenuData = [
     category:"Cheap",
     price:"150",
     namerestaurant:"Waroenk kita",
+    rating:"4,0"
    } ,
    {
     id:"03",
@@ -196,5 +198,43 @@ export const MenuData = [
     category:"Rice",
     price:"120",
     namerestaurant:"Waroenk kita",
+    rating:"3,5"
    } ,
 ];
+
+export const reviewData = [
+    {
+      id: "01",
+      author: "Dianne Russell",
+      date: "12 April 2021",
+      image: require("../../assets/images/profile_user.jpg"),
+      comment: "This is great, so delicious! You must be here with your family.",
+      rating: 5,
+    },
+    {
+      id: "02",
+      author: "Topu",
+      date: "12 April 2021",
+      image: require("../../assets/images/profile_user2.jpg"),
+      comment: "This is great, so delicious! You must be here with your family.",
+      rating: 4,
+    },
+    {
+        id: "03",
+        author: "Topu",
+        date: "12 April 2021",
+        image: require("../../assets/images/profile_user2.jpg"),
+        comment: "This is great, so delicious! You must be here with your family.",
+        rating: 4,
+      },
+      {
+        id: "04",
+        author: "Topu",
+        date: "12 April 2021",
+        image: require("../../assets/images/profile_user2.jpg"),
+        comment: "This is great, so delicious! You must be here with your family.",
+        rating: 4,
+      }
+  ];
+  
+  
