@@ -10,7 +10,7 @@ import {
 import { NearestData } from "./ListData";
 const ViewNeares = () => {
   return (
-    <View style={{ flex: 1, alignSelf: "center" }}>
+    <View style={{ flex: 1, width:"90%",alignSelf: "center" }}>
       <Text style={styles.Nearest}>Nearest Restaurant</Text>
       <View>
         <FlatList
@@ -19,22 +19,22 @@ const ViewNeares = () => {
           renderItem={({ item }) => (
             <Pressable
               style={{
-                backgroundColor: "#FFFFFF",
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 4 },
-                shadowOpacity: 0.1,
-                shadowRadius: 7,
-                borderRadius: 16,
-                marginVertical: 16,
-                alignItems: "center",
-                paddingHorizontal: 8,
-                paddingVertical: 26,
-                alignSelf: "center",
+                    backgroundColor: "#FFFFFF",
+                    shadowColor: "#000",
+                    shadowOffset: { width: 0, height: 4 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 7,
+                    borderRadius: 16,
+                    marginVertical: 16,
+                    alignItems: "center",
+                    paddingHorizontal: 20,
+                    paddingVertical: 26,
+                    alignSelf: "center",
               }}
             >
               <Image
                 source={item.image}
-                style={{ width: 150, height: 150, resizeMode: "contain", borderRadius:40, }}
+                style={{ width: 160, height: 150, resizeMode: "contain", borderRadius:40, }}
               />
               <Text>{item.name}</Text>
             </Pressable>
@@ -42,7 +42,7 @@ const ViewNeares = () => {
           numColumns={2}
           columnWrapperStyle={{
             justifyContent: "space-between",
-            gap: 10,
+            gap: 30,
           }}
         />
       </View>
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   },
   flatListContainer: {
     width: "100%",
-    margin: 8,
     flexDirection: "row",
   },
 });

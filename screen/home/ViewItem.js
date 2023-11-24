@@ -32,72 +32,91 @@ const ViewItem = () => {
     setSearchResults(filteredResults);
   };
   return (
-    <>
-      <View style={{ width: "95%", alignSelf: "center" }}>
+    <View style={{backgroundColor:"#FBFBFF"}}>
+      <View style={{ width: "90%", alignSelf: "center", }}>
         <View
           style={{
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             paddingTop: 20,
             width: "100%",
             alignItems: "center",
+            paddingRight: 20
           }}
         >
           <Text style={{ fontSize: 40, fontWeight: "bold" }}>
             Find Your {"\n"}Favorite Food
           </Text>
           <FontAwesome
-            style={{ marginTop: 30 }}
+            style={{
+              marginTop: 30,
+              paddingHorizontal: 15,
+              paddingVertical: 15,
+              backgroundColor: "#FAFDFF",
+              elevation: 1,
+              shadowColor: "rgba(20, 78, 90, 0.2)",
+              borderRadius: 15,
+
+            }}
             name={"bell-o"}
             size={28}
-            color="#6B50F6"
+            color="#6b50f6"
           />
         </View>
 
         <Pressable style={styles.Searchtext}>
           <View
             style={{
-              backgroundColor: "#fff",
+              backgroundColor: "rgba(107, 80, 246, 0.1)",
               flexDirection: "row",
-              paddingVertical: 16,
+              paddingVertical: 15,
               borderRadius: 18,
-              paddingHorizontal: 18,
+              paddingHorizontal: 15,
               marginVertical: 16,
               shadowColor: "#000",
               shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.1,
               shadowRadius: 7,
               flex: 1,
-              marginLeft: 25,
+
             }}
           >
             <FontAwesome name="search" size={28} color={"#6b50f6"} />
             <TextInput
-              style={{ paddingLeft: 8, fontSize: 16, color: "#808080" }}
+              style={{ paddingLeft: 8, fontSize: 16, color: "#808080", }}
               placeholder="What do you want to order ?"
-              onChangeText={(text) => {
-                setSearchQuery(text);
-                performSearch();
-              }}
-              value={searchQuery}
+              placeholderTextColor={"rgba(107, 80, 246, 0.5)"}
+              clearButtonMode="always"
             ></TextInput>
           </View>
           <Pressable
             onPress={() => {
               navigation.navigate("searchs");
             }}
+
+            style={{
+              backgroundColor: "rgba(107, 80, 246, 0.1)",
+              paddingHorizontal: 15,
+              paddingVertical: 15,
+              borderRadius: 15
+            }}
           >
             <Image
-              source={require("../../assets/icons/FilterSearch.png")}
-              style={{ width: 55, height: 55, marginVertical: 20 }}
+              source={require("../../assets/icons/Filter.png")}
+              style={{
+                width: 24,
+                height: 24,
+
+              }}
             />
           </Pressable>
         </Pressable>
       </View>
+
       <ScrollView>
         <View style={{ flex: 1, width: "90%", alignSelf: "center" }}>
           <Text
-            style={{ fontSize: 20, fontWeight: "bold", marginHorizontal: 16 }}
+            style={{ fontSize: 20, fontWeight: "bold", }}
           >
             Populer Restaurant
           </Text>
@@ -108,14 +127,14 @@ const ViewItem = () => {
                 searchQuery === ""
                   ? ListData
                   : ListData.filter(
-                      (item) =>
-                        item.name
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase()) ||
-                        item.description
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase())
-                    )
+                    (item) =>
+                      item.name
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase()) ||
+                      item.description
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase())
+                  )
               }
               renderItem={({ item }) => (
                 <Pressable
@@ -131,30 +150,30 @@ const ViewItem = () => {
                     borderRadius: 16,
                     marginVertical: 16,
                     alignItems: "center",
-                    paddingHorizontal: 8,
+                    paddingHorizontal: 20,
                     paddingVertical: 26,
                     alignSelf: "center",
                   }}
                 >
                   <Image
                     source={item.image}
-                    style={{ width: 150, height: 150, resizeMode: "center", marginBottom:10, }}
+                    style={{ width: 160, height: 150, resizeMode: "stretch", marginBottom: 10, borderRadius: 5 }}
                   />
-                  <Text style={{ fontWeight:"bold" }}>{item.name}</Text>
+                  <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
                   <Text>{item.time}</Text>
                 </Pressable>
               )}
               numColumns={2}
               columnWrapperStyle={{
                 justifyContent: "space-between",
-                gap: 60,
+                gap: 30
               }}
             />
           </Text>
-          <ViewNeares />
         </View>
+        <ViewNeares />
       </ScrollView>
-    </>
+    </View>
   );
 };
 export default ViewItem;
@@ -184,6 +203,7 @@ const styles = StyleSheet.create({
   Searchtext: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     gap: 15,
-  },
+  }
 });

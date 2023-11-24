@@ -97,8 +97,8 @@ const Home = ({ navigation }) => {
               />
             </Pressable>
           </Pressable>
-          <View
-          >
+          
+          <View>
             <View
               style={{
                 backgroundColor: "#6B50F6",
