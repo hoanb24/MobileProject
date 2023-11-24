@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,7 +22,9 @@ import Shipping from './screen/order/Shipping';
 import Payment from './screen/order/Payment';
 import Address from './screen/order/Address';
 import Ordered from './screen/order/Ordered';
-
+import SignIn from './screen/auth/Login';
+import SignUp from './screen/auth/SignUp';
+import Profile from './screen/home/Profile';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -73,7 +74,7 @@ export default function App() {
             tabBarIcon: ({ color }) => <FontAwesome name='shopping-cart' size={30} color={color} />,
           }}
         />
-        <Tab.Screen name="Chat" component={Message}
+<Tab.Screen name="Chat" component={Message}
           options={{
             tabBarIcon: ({ color }) => <FontAwesome name='comment' size={30} color={color} />
           }}
@@ -97,9 +98,10 @@ export default function App() {
         <Stack.Screen name='payment' component={Payment}/>
         <Stack.Screen name='address' component={Address}/>
         <Stack.Screen name='ordered' component={Ordered}/>
+        <Stack.Screen name='profile' component={Profile}/>
+        <Stack.Screen name='register' component={SignUp}/>
+        <Stack.Screen name='login' component={SignIn}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
-
-

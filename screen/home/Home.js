@@ -76,6 +76,7 @@ const Home = ({ navigation }) => {
                   backgroundColor: "#6B50F6",
                   opacity: 0.5,
                   borderRadius: 12,
+                  backgroundColor:"white"
                 }}
               />
             </Pressable>
@@ -99,27 +100,28 @@ const Home = ({ navigation }) => {
             />
             <View>
               <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+                style={{ fontSize: 25, fontWeight: "bold", color: "white" }}
               >
-                Special Deal For October
+                Special Deal For{'\n'}
+                October
               </Text>
               <Pressable>
                 <Text
                   style={{
-                    width: 70,
-                    height: 30,
+                    width: 90,
+                    height: 40,
                     backgroundColor: "white",
                     justifyContent: "flex-end",
                     alignItems: "center",
                     fontSize: 15,
                     paddingHorizontal: 5,
-                    borderRadius: 8,
+                    borderRadius: 10,
                     marginTop: 10,
                     paddingTop: 5,
-                    marginLeft: 60,
+                    marginLeft: 0,
                   }}
                 >
-                  Buy now
+                  <Text style={{marginLeft:15 , color:'#6B50F6' , marginTop:10}}>  Buy Now</Text>
                 </Text>
               </Pressable>
             </View>

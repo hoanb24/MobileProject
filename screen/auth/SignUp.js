@@ -60,28 +60,67 @@ const SignUp = () => {
         />
       </View>
       <View>
-        <Text style={styles.text}>Create Your Account</Text>
+        <Text style={styles.text}>Sign Up For Free</Text>
       </View>
       <View>
+      <Image
+        source={require('../../assets/icons/profile.png')}
+        style={{ width: 20, height: 20, left: 10 , top:45}}
+      />
         <TextInput
           style={styles.input}
-          placeholder="Your Name"
+          placeholder="          Madeofzero.."
           value={name}
           onChangeText={(text) => setName(text)}
         />
+      </View>
+      <View> 
+        <Image
+        source={require('../../assets/icons/message.png')}
+        style={{ width: 20, height: 20, left: 10 , top:45}}
+      />
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder="          Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
+      </View>
+      <View>
+      <Image
+        source={require('../../assets/icons/lock.png')}
+        style={{ width: 20, height: 20, left: 10 , top:45}}
+      />
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder="         Password"
           secureTextEntry={true}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
+      </View>
+      <View>
+      <Image
+        source={require('../../assets/icons/IconPlus.png')}
+        style={{ width: 20, height: 20, right:80,  top:22}}
+      />
+        <Text style={{
+          fontSize: 15,
+          right: 65,
+          color: 'gray',
+          marginLeft:10
+
+        }}>Keep Me Signed In</Text>
+        <Image
+        source={require('../../assets/icons/IconPlus.png')}
+        style={{ width: 20, height: 20, right:80,  top:30}}
+      />
+        <Text style={{
+          fontSize: 15,
+          right: 55,
+          color: 'gray',
+          top: 10
+        }}>Email Me About Special Pricing</Text>
       </View>
       <View>
         <TouchableOpacity
@@ -93,12 +132,17 @@ const SignUp = () => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: 12,
+            top: 30
           }}
         >
           <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>
             Create Account
           </Text>
+
         </TouchableOpacity>
+      </View>
+      <View>
+        <Text style={{ right: 0, top: 36 , color: '#6B50F6' }}>Already Have An Account ?</Text>
       </View>
     </View>
   );
@@ -111,6 +155,7 @@ export default SignUp;
 
 const styles = StyleSheet.create({
   container: {
+    top: -20,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -125,7 +170,7 @@ const styles = StyleSheet.create({
   input: {
     height: 70,
     width: 380,
-    borderColor: "gray",
+    borderColor: "white",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
