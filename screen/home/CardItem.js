@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 const CardItem=()=>{
     const navigation=useNavigation();
     return(
-        <View style={{marginLeft:20}}>
+        <View style={{}}>
             <FlatList
             horizontal={true}
             showsHorizontalScrollIndicator={false}
@@ -15,20 +15,17 @@ const CardItem=()=>{
             onPress={()=>navigation.navigate('detailpage',{item:item})}
             style={{
             backgroundColor:"#FFFFFF",
-            shadowColor:"#000",
-            shadowOffset:{width:0,height:4},
-            shadowOpacity:0.1,
-            shadowRadius:7,
             borderRadius:16,
             marginVertical:16,
             alignItems:"center",
             paddingHorizontal:8,
-            paddingVertical:26,
+            paddingVertical:20,
             alignSelf:"center",
-            marginRight: 16,
+            marginRight: 20,
+            elevation:0.2
             }}
             >
-                <Image source={item.image} style={{ width:150,height:150,resizeMode:"contain" , marginBottom:12, borderRadius:20,}}/>
+                <Image source={item.image} style={{ width:190,height:150,resizeMode:"cover" , marginBottom:12, borderRadius:20,}}/>
                 <Text style={{ fontWeight:"bold"}}>{item.name}</Text>
                 <Text>{item.time}</Text>
            </Pressable>}  
