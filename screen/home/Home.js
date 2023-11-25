@@ -15,23 +15,36 @@ import TestimonialFrame from "../../components/TestimonialFrame";
 
 const Home = ({ navigation }) => {
   return (
-    <ScrollView>
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, width: "95%" }}>
+    <ScrollView style={{
+      backgroundColor:"#FBFBFF"
+      // backgroundColor: "blue"
+    }}>
+      <SafeAreaView style={{ flex: 1, width: "90%", alignSelf: "center" }}>
+        <View style={{ flex: 1 }}>
           <View
             style={{
               flexDirection: "row",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
               paddingTop: 20,
               width: "100%",
               alignItems: "center",
+              paddingRight:20
             }}
           >
             <Text style={{ fontSize: 40, fontWeight: "bold" }}>
               Find Your {"\n"}Favorite Food
             </Text>
             <FontAwesome
-              style={{ marginTop: 30 }}
+              style={{ 
+                marginTop: 30,
+                paddingHorizontal:15,
+                paddingVertical:15,
+                backgroundColor:"#FAFDFF",
+                elevation:1,
+                shadowColor:"rgba(20, 78, 90, 0.2)",
+                borderRadius:15,
+              
+              }}
               name={"bell-o"}
               size={28}
               color="#6b50f6"
@@ -41,24 +54,24 @@ const Home = ({ navigation }) => {
           <Pressable style={styles.Searchtext}>
             <View
               style={{
-                backgroundColor: "#fff",
+                backgroundColor: "rgba(107, 80, 246, 0.1)",
                 flexDirection: "row",
-                paddingVertical: 16,
+                paddingVertical: 15,
                 borderRadius: 18,
-                paddingHorizontal: 18,
+                paddingHorizontal: 15,
                 marginVertical: 16,
                 shadowColor: "#000",
                 shadowOffset: { width: 0, height: 4 },
                 shadowOpacity: 0.1,
                 shadowRadius: 7,
                 flex: 1,
-                marginLeft: 25,
               }}
             >
               <FontAwesome name="search" size={28} color={"#6b50f6"} />
               <TextInput
-                style={{ paddingLeft: 8, fontSize: 16, color: "#808080" }}
+                style={{ paddingLeft: 8, fontSize: 16, color: "#808080",  }}
                 placeholder="What do you want to order ?"
+                placeholderTextColor={"rgba(107, 80, 246, 0.5)"}
                 clearButtonMode="always"
               ></TextInput>
             </View>
@@ -66,9 +79,16 @@ const Home = ({ navigation }) => {
               onPress={() => {
                 navigation.navigate("searchs");
               }}
+                  
+                  style={{
+                    backgroundColor: "rgba(107, 80, 246, 0.1)",
+                    paddingHorizontal:15,
+                    paddingVertical:15,
+                    borderRadius:15
+                  }}
             >
               <Image
-                source={require("../../assets/icons/FilterSearch.png")}
+                source={require("../../assets/icons/Filter.png")}
                 style={{
                   width: 55,
                   height: 55,
@@ -76,7 +96,6 @@ const Home = ({ navigation }) => {
                   backgroundColor: "#6B50F6",
                   opacity: 0.5,
                   borderRadius: 12,
-                  backgroundColor:"white"
                 }}
               />
             </Pressable>
@@ -100,28 +119,27 @@ const Home = ({ navigation }) => {
             />
             <View>
               <Text
-                style={{ fontSize: 25, fontWeight: "bold", color: "white" }}
+                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
               >
-                Special Deal For{'\n'}
-                October
+                Special Deal For October
               </Text>
               <Pressable>
                 <Text
                   style={{
-                    width: 90,
-                    height: 40,
+                    width: 70,
+                    height: 30,
                     backgroundColor: "white",
                     justifyContent: "flex-end",
                     alignItems: "center",
                     fontSize: 15,
                     paddingHorizontal: 5,
-                    borderRadius: 10,
+                    borderRadius: 8,
                     marginTop: 10,
                     paddingTop: 5,
-                    marginLeft: 0,
+                    marginLeft: 60,
                   }}
                 >
-                  <Text style={{marginLeft:15 , color:'#6B50F6' , marginTop:10}}>  Buy Now</Text>
+                  Buy now
                 </Text>
               </Pressable>
             </View>
@@ -134,7 +152,6 @@ const Home = ({ navigation }) => {
                 style={{
                   fontSize: 20,
                   fontWeight: "bold",
-                  paddingHorizontal: 18,
                 }}
               >
                 Nearest Restaurant
@@ -146,10 +163,9 @@ const Home = ({ navigation }) => {
             <CardItem />
           </View>
         </View>
-
         <View>
           <Text
-            style={{ fontSize: 20, fontWeight: "bold", marginHorizontal: 26 }}
+            style={{ fontSize: 20, fontWeight: "bold" }}
           >
             Populer Menu
           </Text>
@@ -164,6 +180,7 @@ const styles = StyleSheet.create({
   Searchtext: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems:"center",
     gap: 15,
   },
   menuImage: {
