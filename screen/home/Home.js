@@ -100,6 +100,10 @@ const Home = ({ navigation }) => {
               />
             </Pressable>
           </Pressable>
+
+          
+          <View>
+
           <View
             style={{
               flexDirection: "row",
@@ -113,17 +117,27 @@ const Home = ({ navigation }) => {
               justifyContent: "center",
             }}
           >
-            <Image
-              style={{ width: 150, height: 200, resizeMode: "contain" }}
-              source={require("../../assets/backgroundImages/bg1.png")}
-            />
-            <View>
-              <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-              >
-                Special Deal For October
-              </Text>
-              <Pressable>
+            <View
+              style={{
+                backgroundColor: "#6B50F6",
+                width: "100%",
+                height: 180,
+                alignSelf: "center",
+                borderRadius: 20
+              }}
+            >
+              <Image
+                style={{
+                  height: 180,
+                  borderRadius: 20,
+                  position: "relative",
+                  resizeMode: "stretch",
+                }}
+
+                source={require("../../assets/backgroundImages/backgound21.png")}
+
+              />
+              <View style={{ position: "absolute", bottom: 30, right: 25 }}>
                 <Text
                   style={{
                     width: 70,

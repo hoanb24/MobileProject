@@ -34,26 +34,13 @@ export default function SearchPage() {
         <View style={styles.contentCard}>
           <Image source={item.image} style={styles.imagess} />
           <View>
-            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-              {item.name}
-            </Text>
-            <Text
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: 12,
-                color: "#22242E",
-              }}
-            >
-              {item.description}
-            </Text>
+
+
+            <Text style={{ fontSize: 18, fontWeight: "bold" }}>{item.name}</Text>
+            <Text style={{ justifyContent: "center", alignItems: "center", fontSize: 12, color: "#22242E" }}>{item.description}</Text>
           </View>
           <View>
-            <Text
-              style={{ color: "#6B50F6", fontWeight: "bold", fontSize: 23 }}
-            >
-              {item.price}
-            </Text>
+            <Text style={{ color: "#6B50F6", fontWeight: "bold", fontSize: 23, }}>{item.price}</Text>
           </View>
         </View>
       </View>
@@ -85,15 +72,16 @@ export default function SearchPage() {
   }, [searchInput, selectedCategory]);
 
   return (
-    <>
-      <View style={{ flex: 1, backgroundColor: "#FEFEFF" }}>
+    <View style={{flex:1, backgroundColor:"#FBFBFF" }}>
+      <View style={{ width: "90%", alignSelf: "center"}}>
         <View
           style={{
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             paddingTop: 20,
             width: "100%",
             alignItems: "center",
+            paddingRight: 20
           }}
         >
           <Text style={{ fontSize: 40, fontWeight: "bold" }}>
@@ -102,44 +90,46 @@ export default function SearchPage() {
           <FontAwesome
             style={{
               marginTop: 30,
-              paddingHorizontal: 16,
-              backgroundColor: "#FAFAFA",
-              height: 50,
-              width: 60,
-              borderRadius: 25,
+              paddingHorizontal: 15,
+              paddingVertical: 15,
+              backgroundColor: "#FAFDFF",
+              elevation: 1,
+              shadowColor: "rgba(20, 78, 90, 0.2)",
+              borderRadius: 15,
+
             }}
             name={"bell-o"}
             size={28}
-            color="#6B50F6"
+            color="#6b50f6"
           />
         </View>
 
         <Pressable style={styles.Searchtext}>
-          <View
-            style={{
-              backgroundColor: "#ECEFF1",
-              flexDirection: "row",
-              paddingVertical: 16,
-              borderRadius: 18,
-              paddingHorizontal: 18,
-              marginVertical: 16,
-              shadowColor: "#000",
-              shadowOffset: { width: 0, height: 4 },
-              shadowOpacity: 0.1,
-              shadowRadius: 7,
-              flex: 1,
-              marginHorizontal: 16,
-            }}
-          >
-            <FontAwesome name="search" size={28} color={"#6b50f6"} />
-            <TextInput
-              style={{ paddingLeft: 8, fontSize: 16, color: "#6B50F6" }}
-              placeholder="What do you want to order ?"
-              value={searchInput}
-              onChangeText={(text) => setSearchInput(text)}
-            />
-          </View>
-        </Pressable>
+
+            <View
+              style={{
+                backgroundColor: "rgba(107, 80, 246, 0.1)",
+                flexDirection: "row",
+                paddingVertical: 15,
+                borderRadius: 18,
+                paddingHorizontal: 15,
+                marginVertical: 16,
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.1,
+                shadowRadius: 7,
+                flex: 1,
+              }}
+            >
+              <FontAwesome name="search" size={28} color={"#6b50f6"} />
+              <TextInput
+                style={{ paddingLeft: 8, fontSize: 16, color: "#808080",  }}
+                placeholder="What do you want to order ?"
+                placeholderTextColor={"rgba(107, 80, 246, 0.5)"}
+                clearButtonMode="always"
+              ></TextInput>
+            </View>
+          </Pressable>
         <Text style={{ marginHorizontal: 16, fontSize: 20, fontWeight: "800" }}>
           Type
         </Text>
@@ -172,13 +162,14 @@ export default function SearchPage() {
           keyExtractor={(item) => item.id}
         />
       </View>
-    </>
+    </View>
   );
 }
 const styles = StyleSheet.create({
   Searchtext: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems:"center",
     gap: 15,
   },
   filterSearch: {
@@ -277,6 +268,7 @@ const styles = StyleSheet.create({
   imagess: {
     width: 80,
     height: 80,
+    borderRadius:5
   },
   contentCard: {
     flexDirection: "row",
@@ -285,7 +277,8 @@ const styles = StyleSheet.create({
     padding: 10,
     marginHorizontal: 28,
     marginVertical: 16,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#FFFFFF",
     borderRadius: 16,
+    elevation:0.2
   },
 });

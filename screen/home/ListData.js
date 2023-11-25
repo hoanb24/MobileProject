@@ -40,7 +40,7 @@ export const ListData = [
     },
     {
         id:"03",
-        name:"Mì xào hải sản",
+        name:"Mì xào sản",
         image: require("../../assets/images/tuna.png"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
@@ -73,7 +73,7 @@ export const ListData = [
     },
     {
         id:"05",
-        name:"Bạch Tuộc Xào Cay",
+        name:"Bạch Tuộc Xào",
         image: require("../../assets/images/bachtuoc.jpg"),
         rating:"4.2",
         ingredients:["Fresh Tuna","Lime juice","Red Onion","Avocado"],
@@ -236,5 +236,5 @@ export const reviewData = [
         rating: 4,
       }
   ];
-  
+
   

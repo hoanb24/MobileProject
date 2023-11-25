@@ -22,7 +22,6 @@ const SignUp = () => {
       name,
       password,
     };
-
     try {
       const response = await fetch(
         "https://643918404660f26eb1aa3099.mockapi.io/user",
@@ -34,6 +33,7 @@ const SignUp = () => {
           body: JSON.stringify(user),
         }
       );
+
 
       if (response.ok) {
         console.log("Sign-up successful");
@@ -100,6 +100,7 @@ const SignUp = () => {
         />
       </View>
       <View>
+
       <Image
         source={require('../../assets/icons/IconPlus.png')}
         style={{ width: 20, height: 20, right:80,  top:22}}
@@ -123,6 +124,7 @@ const SignUp = () => {
         }}>Email Me About Special Pricing</Text>
       </View>
       <View>
+
         <TouchableOpacity
           onPress={handleSignUp}
           style={{
@@ -138,7 +140,6 @@ const SignUp = () => {
           <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>
             Create Account
           </Text>
-
         </TouchableOpacity>
       </View>
       <View>
