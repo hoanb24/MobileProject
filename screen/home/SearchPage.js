@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,17 +11,30 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { ListData } from "./ListData";
+
 export default function SearchPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   const renderItem = ({ item }) => {
     if (selectedCategory && item.category !== selectedCategory) {
       return null;
     }
+
+    if (
+      searchInput !== "" &&
+      !item.name.toLowerCase().includes(searchInput.toLowerCase())
+    ) {
+      return null;
+    }
+
     return (
       <View style={styles.container}>
         <View style={styles.contentCard}>
           <Image source={item.image} style={styles.imagess} />
           <View>
+
             <Text style={{ fontSize: 18, fontWeight: "bold" }}>{item.name}</Text>
             <Text style={{ justifyContent: "center", alignItems: "center", fontSize: 12, color: "#22242E" }}>{item.description}</Text>
           </View>
@@ -32,9 +45,31 @@ export default function SearchPage() {
       </View>
     );
   };
+
   const selectCategory = (category) => {
     setSelectedCategory(category);
   };
+
+  const updateSearchResults = () => {
+    const filteredResults = ListData.filter((item) => {
+      if (selectedCategory && item.category !== selectedCategory) {
+        return false;
+      }
+      if (
+        searchInput === "" ||
+        item.name.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        return true;
+      }
+      return false;
+    });
+    setSearchResults(filteredResults);
+  };
+
+  useEffect(() => {
+    updateSearchResults();
+  }, [searchInput, selectedCategory]);
+
   return (
     <View style={{flex:1, backgroundColor:"#FBFBFF" }}>
       <View style={{ width: "90%", alignSelf: "center"}}>
@@ -93,8 +128,6 @@ export default function SearchPage() {
               ></TextInput>
             </View>
           </Pressable>
-
-
         <Text style={{ marginHorizontal: 16, fontSize: 20, fontWeight: "800" }}>
           Type
         </Text>
@@ -121,13 +154,11 @@ export default function SearchPage() {
           </TouchableOpacity>
         </View>
 
-        {selectedCategory && (
-          <FlatList
-            data={ListData}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-          />
-        )}
+        <FlatList
+          data={searchResults}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
       </View>
     </View>
   );
@@ -248,5 +279,4 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     elevation:0.2
   },
-
 });

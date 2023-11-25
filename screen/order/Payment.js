@@ -19,7 +19,7 @@ const Payment = ({ navigation }) => {
           <TouchableOpacity>
             <Image source={require("../../assets/icons/IconBack.png")} />
           </TouchableOpacity>
-          <Text style={{ fontWeight: "bold", fontSize: 25 }}>Shipping</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 25 }}>Payment</Text>
         </View>
         <View style={{ alignItems:"center" }}>
           <View
@@ -44,7 +44,7 @@ const Payment = ({ navigation }) => {
                 }}
               />
               <View>
-                <Text style={{ marginLeft: 50, fontWeight: "bold", fontSize:18, }}>
+                <Text style={{ marginLeft: 70, fontWeight: "bold", fontSize:18, }}>
                   2121 6352 8465 ****
                 </Text>
               </View>
@@ -90,7 +90,7 @@ const Payment = ({ navigation }) => {
               shadowOpacity: 20,
             }}
           >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View style={{ flexDirection: "row", alignItems: "center",marginLeft:20,marginTop:20, }}>
               <Image
                 source={require("../../assets/images/payoneer.png")}
                 style={{
@@ -101,7 +101,7 @@ const Payment = ({ navigation }) => {
                 }}
               />
               <View>
-                <Text style={{ marginLeft: 50, fontWeight: "bold" }}>
+                <Text style={{ marginLeft: 70, fontWeight: "bold" }}>
                   2121 6352 8465 ****
                 </Text>
               </View>
