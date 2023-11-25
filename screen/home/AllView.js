@@ -5,13 +5,10 @@ import ViewNeares from "./ViewNeares";
 import Header from "./Header";
 export default function AllView(){
     return(
-        <View>
             <ScrollView>
                 <ViewItem/>
                 <ViewNeares/>
-            </ScrollView>
-        </View>
-       
+            </ScrollView>       
     )
 }
 const styles=StyleSheet.create({
