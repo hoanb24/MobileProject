@@ -35,6 +35,7 @@ export default function SearchPage() {
           <Image source={item.image} style={styles.imagess} />
           <View>
 
+
             <Text style={{ fontSize: 18, fontWeight: "bold" }}>{item.name}</Text>
             <Text style={{ justifyContent: "center", alignItems: "center", fontSize: 12, color: "#22242E" }}>{item.description}</Text>
           </View>
@@ -104,6 +105,7 @@ export default function SearchPage() {
         </View>
 
         <Pressable style={styles.Searchtext}>
+
             <View
               style={{
                 backgroundColor: "rgba(107, 80, 246, 0.1)",

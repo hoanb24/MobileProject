@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -28,6 +27,7 @@ import SignIn from './screen/auth/Login';
 import SignUp from './screen/auth/SignUp';
 import Profile from './screen/home/Profile';
 import DetailMenu from './screen/home/DetailMenu';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -77,7 +77,7 @@ export default function App() {
             tabBarIcon: ({ color }) => <FontAwesome name='shopping-cart' size={30} color={color} />,
           }}
         />
-        <Tab.Screen name="Chat" component={Message}
+<Tab.Screen name="Chat" component={Message}
           options={{
             tabBarIcon: ({ color }) => <FontAwesome name='comment' size={30} color={color} />
           }}
@@ -105,9 +105,8 @@ export default function App() {
         <Stack.Screen name='register' component={SignUp}/>
         <Stack.Screen name='login' component={SignIn}/>
         <Stack.Screen name='menudetail' component={DetailMenu}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
-
-

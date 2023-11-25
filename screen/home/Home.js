@@ -90,9 +90,12 @@ const Home = ({ navigation }) => {
               <Image
                 source={require("../../assets/icons/Filter.png")}
                 style={{
-                  width: 24,
-                  height: 24,
-                  
+                  width: 55,
+                  height: 55,
+                  marginVertical: 20,
+                  backgroundColor: "#6B50F6",
+                  opacity: 0.5,
+                  borderRadius: 12,
                 }}
               />
             </Pressable>
@@ -102,8 +105,18 @@ const Home = ({ navigation }) => {
           <View>
 
           <View
+            style={{
+              flexDirection: "row",
+              width: "95%",
+              left: 10,
+              backgroundColor: "#6B50F6",
+              alignItems: "center",
+              borderRadius: 8,
+              gap: 20,
+              alignSelf: "center",
+              justifyContent: "center",
+            }}
           >
-
             <View
               style={{
                 backgroundColor: "#6B50F6",
@@ -126,30 +139,26 @@ const Home = ({ navigation }) => {
               />
               <View style={{ position: "absolute", bottom: 30, right: 25 }}>
                 <Text
-                  style={{ fontSize: 23, fontWeight: "bold", color: "white", }}
+                  style={{
+                    width: 70,
+                    height: 30,
+                    backgroundColor: "white",
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    fontSize: 15,
+                    paddingHorizontal: 5,
+                    borderRadius: 8,
+                    marginTop: 10,
+                    paddingTop: 5,
+                    marginLeft: 60,
+                  }}
                 >
-                  Special Deal For{"\n"} October
+                  Buy now
                 </Text>
-                <Pressable>
-                  <Text
-                    style={{
-                      backgroundColor: "white",
-                      justifyContent: "flex-start",
-                      fontSize: 15,
-                      borderRadius: 8,
-                      width: 90,
-                      textAlign: "center",
-                      paddingVertical: 10,
-                      marginTop: 10
-                    }}
-                  >
-                    Buy now
-                  </Text>
-                </Pressable>
-              </View>
+              </Pressable>
             </View>
           </View>
-          <View style={{ marginTop: 10 }}>
+          <View style={{ paddingVertical: 16 }}>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >

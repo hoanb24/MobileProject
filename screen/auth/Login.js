@@ -31,11 +31,13 @@ const SignIn = () => {
         const user = users.find(
           (user) => user.email === email && user.password === password
         );
+
         if (user) {
           console.log(users);
           console.log("Đăng nhập thành công");
           saveData(user);
           readData(user);
+
           navigation.navigate("profile");
         } else {
           console.error("Đăng nhập thất bại");
@@ -64,7 +66,9 @@ const SignIn = () => {
         <Text style={styles.text}>Login to Your Account</Text>
       </View>
       <View>
-        <TextInput
+
+        <TextInput 
+
           style={styles.input}
           placeholder="Email"
           value={email}
@@ -77,7 +81,8 @@ const SignIn = () => {
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
-        <Text style={{ justifyContent: "center", alignItems: "center" }}>
+
+        <Text style={{ justifyContent: "center", alignItems: "center", marginLeft:135}}>
           Or Continue With
         </Text>
       </View>
@@ -99,7 +104,9 @@ const SignIn = () => {
             width: 160,
             height: 60,
             borderRadius: 10,
-            borderColor: "#22242E",
+
+            borderColor: "white",
+
             borderWidth: 1,
           }}
         >
@@ -122,7 +129,9 @@ const SignIn = () => {
             width: 160,
             height: 60,
             borderRadius: 10,
-            borderColor: "#22242E",
+
+            borderColor: "white",
+
             borderWidth: 1,
           }}
         >
@@ -206,10 +215,12 @@ const styles = StyleSheet.create({
   input: {
     height: 70,
     width: 380,
-    borderColor: "gray",
+    borderColor: "white",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    borderRadius: 10,
-  },
+    borderRadius: 15,
+  
+    
+  }
 });
