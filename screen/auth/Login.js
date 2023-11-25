@@ -21,7 +21,6 @@ const SignIn = () => {
       email,
       password,
     };
-
     try {
       const response = await axios.get(
         "https://643918404660f26eb1aa3099.mockapi.io/user"
@@ -32,12 +31,11 @@ const SignIn = () => {
         const user = users.find(
           (user) => user.email === email && user.password === password
         );
-
         if (user) {
           console.log(users);
           console.log("Đăng nhập thành công");
-          saveData(userData.email);
-          readData(userData.email);
+          saveData(user);
+          readData(user);
           navigation.navigate("profile");
         } else {
           console.error("Đăng nhập thất bại");

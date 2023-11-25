@@ -13,15 +13,17 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Profile = () => {
   const [userName, setUserName] = useState("");
-
+  const [userEmail, setUserEmail] = useState("");
   useEffect(() => {
     const fetchData = async () => {
       try {
         const jsonValue = await AsyncStorage.getItem("user");
         if (jsonValue !== null) {
           const data = JSON.parse(jsonValue);
-          const userValue = data.value; 
-          setUserName(userValue);
+          const userName = data.value.name; 
+          const userEmail = data.value.email; 
+          setUserName(userName);
+          setUserEmail(userEmail);
         } else {
           console.log("Không xác định");
         }
@@ -44,7 +46,7 @@ const Profile = () => {
             <Text style={Styles.Title}>Member Gold</Text>
             <View style={Styles.userInfo}>
               <Text style={Styles.nameuse}>{userName}</Text>
-              <Text style={Styles.emailText}>awdesign.ar@gmail.com </Text>
+              <Text style={Styles.emailText}>{userEmail}</Text>
             </View>
             <View style={Styles.voucherContainer}>
               <Image source={require("../../assets/images/Voucher.png")} />

@@ -22,7 +22,6 @@ const SignUp = () => {
       name,
       password,
     };
-
     try {
       const response = await fetch(
         "https://643918404660f26eb1aa3099.mockapi.io/user",
@@ -35,9 +34,8 @@ const SignUp = () => {
         }
       );
 
-      if (response.ok) {
+      if (response.status === 201) {
         console.log("Sign-up successful");
-        saveData()
         navigation.navigate("login");
       } else {
         console.error("Sign-up failed");

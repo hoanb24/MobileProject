@@ -26,8 +26,10 @@ import Ordered from './screen/order/Ordered';
 import SignIn from './screen/auth/Login';
 import SignUp from './screen/auth/SignUp';
 import Profile from './screen/home/Profile';
+import DetailMenu from './screen/home/DetailMenu';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 export default function App() {
   const BottomTab = () => {
     return (
@@ -101,6 +103,7 @@ export default function App() {
         <Stack.Screen name='profile' component={Profile}/>
         <Stack.Screen name='register' component={SignUp}/>
         <Stack.Screen name='login' component={SignIn}/>
+        <Stack.Screen name='menudetail' component={DetailMenu}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
